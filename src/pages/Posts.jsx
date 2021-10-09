@@ -43,7 +43,7 @@ function Posts() {
   }, [page, limit]);
 
   const createPost = (newPost) => {
-    setPosts([...posts, newPost]);
+    setPosts([newPost, ...posts]);
     setModal(false);
   };
 

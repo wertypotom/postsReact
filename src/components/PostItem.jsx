@@ -9,19 +9,20 @@ const PostItem = ({ post, number, deletePost }) => {
     <div className="post">
       <div className="post__container">
         <strong>
-          {post.id}. {post.title}
+          {number}. {post.title}
         </strong>
         <div>{post.body}</div>
+
+        <Button
+          onClick={() => router.push(`/posts/${post.id}`)}
+          className="post__btn"
+        >
+          Open
+        </Button>
+        <Button onClick={() => deletePost(post)} className="post__btn">
+          Delete
+        </Button>
       </div>
-      <Button
-        onClick={() => router.push(`/posts/${post.id}`)}
-        className="post__btn"
-      >
-        Open
-      </Button>
-      <Button onClick={() => deletePost(post)} className="post__btn">
-        Delete
-      </Button>
     </div>
   );
 };
